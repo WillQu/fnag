@@ -21,6 +21,10 @@ public final class SalesClerk {
 		return name;
 	}
 	
+	public Map<Product, Integer> getSales() {
+		return new HashMap<>(this.sales);
+	}
+	
 	/**
 	 * Add a new sales record for the specified product.
 	 * @param product the product to add. Overwrites any record for the same product.
