@@ -1,8 +1,10 @@
 package willmann.sebastien.fnag;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * This class represents a store
@@ -19,6 +21,10 @@ public final class Store {
 
 	public String getName() {
 		return name;
+	}
+	
+	public Set<SalesClerk> getSalesClerk() {
+		return new HashSet<>(this.salesClerks.values());
 	}
 	
 	/**
@@ -55,5 +61,35 @@ public final class Store {
 	@Override
 	public String toString() {
 		return "Store [name=" + name + ", salesClerks=" + salesClerks + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Store other = (Store) obj;
+		if (name == null) {
+			if (other.name != null) {
+				return false;
+			}
+		} else if (!name.equals(other.name)) {
+			return false;
+		}
+		return true;
 	}
 }
