@@ -35,7 +35,7 @@ public final class Store {
 	 */
 	public void addRecord(String clerkName, Product product, int number) {
 		if(!this.salesClerks.containsKey(clerkName)) {
-			this.salesClerks.put(clerkName, new SalesClerk(clerkName));
+			this.salesClerks.put(clerkName, new SalesClerk(clerkName, this));
 		}
 		
 		SalesClerk clerk = this.salesClerks.get(clerkName);

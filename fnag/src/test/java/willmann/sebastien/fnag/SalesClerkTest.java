@@ -13,7 +13,7 @@ public class SalesClerkTest {
 
 	@Test
 	public void computeTotalSales() {
-		SalesClerk salesClerk = new SalesClerk("Jean-Jacques");
+		SalesClerk salesClerk = new SalesClerk("Jean-Jacques", null);
 		
 		salesClerk.addSale(new Product("ref1", new BigDecimal("1"), "desc1"), 1);
 		salesClerk.addSale(new Product("ref2", new BigDecimal("2"), "desc2"), 5);

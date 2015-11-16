@@ -11,14 +11,20 @@ import java.util.Map;
 public final class SalesClerk {
 	
 	private final String name;
+	private final Store store;
 	private final Map<Product, Integer> sales = new HashMap<>();
 
-	public SalesClerk(String name) {
+	public SalesClerk(String name, Store store) {
 		this.name = name;
+		this.store = store;
 	}
 	
 	public String getName() {
 		return name;
+	}
+	
+	public Store getStore() {
+		return store;
 	}
 	
 	public Map<Product, Integer> getSales() {

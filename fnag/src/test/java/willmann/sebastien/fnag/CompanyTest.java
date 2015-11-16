@@ -44,7 +44,7 @@ public class CompanyTest {
 		Map<SalesClerk, BigDecimal> result = this.company.getTopSalesClerks();
 		
 		assertEquals(1, result.size());
-		assertTrue(result.keySet().contains(new SalesClerk("Alice")));
+		assertTrue(result.keySet().stream().map(SalesClerk::getName).anyMatch(s -> s.equals("Alice")));
 		assertTrue(result.values().contains(new BigDecimal("229.98")));
 	}
 
